@@ -136,3 +136,33 @@ def supprimeBTS(arbre: Noeud, k):
         arbre.valeur = minimum(arbre.getDroit())
         arbre.enfantDroit = supprimeBTS(arbre.getDroit(), arbre.getValeur())
     return arbre
+
+def supprime_rec(self, valeur):
+    if valeur self._valeur:
+        if self.aFG():
+            self. fg self._fg.supprime_rec(valeur)
+        else:
+            return self
+    elif self. valeur < valeur:
+        if self.aFD():
+            self. fd self._fd.supprime_rec(valeur)
+        else:
+            return self
+    else:
+        # on a trouvé le sommet à enlever
+        if self.estFeuille():
+            return None
+        elif self.aFD():
+            if self._fd.aFG():
+                val self._fd._valeur
+                self. valeur = val
+                self. fd self._fd.supprime_rec(val)
+            else:
+                self. valeur self.fd.valeur
+                self. fd self. fd._fd
+        else:
+            self._valeur self._fg._valeur
+            self. fd self._fg._fd
+            self. fg self. fg. fg
+            return self
+    return self
